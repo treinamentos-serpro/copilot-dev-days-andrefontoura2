@@ -15,24 +15,32 @@
 <!-- ============================================================= -->
 <div id="lobbyView" class="screen lobby-screen">
     <main class="lobby-shell">
-        <div class="lobby-topline"><span>SYS.01</span><span>LOCAL NETWORK // READY</span></div>
-        <div class="brand-lockup">
-            <span class="brand-kicker">SOCIAL OPERATIONS</span>
-            <h1>Soc <em>Ops</em></h1>
-            <p>Human connection, gamified.</p>
+        <div class="lobby-topline"><span>SYS.03 // ARCADE POSTER</span><span>LOCAL NETWORK // READY</span></div>
+        <div class="lobby-poster">
+            <section class="brand-lockup" aria-labelledby="posterTitle">
+                <span class="brand-kicker">SOCIAL BINGO // IN-PERSON SIGNAL</span>
+                <p class="poster-caption">Room temperature rising. Mission strip armed. Start the mixer.</p>
+                <h1 id="posterTitle"><span>Soc</span> <em>Ops</em></h1>
+                <p class="poster-deck">Oversized energy for quick introductions, fast laughs, and five-in-a-row momentum.</p>
+                <div class="mission-strip" aria-label="Game mission strip">
+                    <span>Scan the room</span>
+                    <span>Match the prompt</span>
+                    <span>Lock the line</span>
+                </div>
+            </section>
+
+            <section class="briefing-panel" aria-labelledby="briefingTitle">
+                <div class="panel-heading"><span class="signal-dot"></span><h2 id="briefingTitle">Mission briefing</h2><span class="panel-code">[00:25]</span></div>
+                <ol class="briefing-list">
+                    <li><span>01</span><p>Find a person who matches a prompt.</p></li>
+                    <li><span>02</span><p>Mark the square and keep the conversation moving.</p></li>
+                    <li><span>03</span><p>Complete five in a row to trigger BINGO.</p></li>
+                </ol>
+            </section>
         </div>
 
-        <section class="briefing-panel" aria-labelledby="briefingTitle">
-            <div class="panel-heading"><span class="signal-dot"></span><h2 id="briefingTitle">Mission briefing</h2><span class="panel-code">[00:25]</span></div>
-            <ol class="briefing-list">
-                <li><span>01</span><p>Find a person who matches a prompt.</p></li>
-                <li><span>02</span><p>Mark the square. Keep the conversation moving.</p></li>
-                <li><span>03</span><p>Complete five in a row to trigger BINGO.</p></li>
-            </ol>
-        </section>
-
         <button onclick="launchGame()" class="launch-button accent-active">
-            <span>Initialize game</span><strong>↗</strong>
+            <span class="launch-copy"><small>Launch sequence</small><span>Start mixer</span></span><strong>↗</strong>
         </button>
         <div class="lobby-footer"><span>v2.5 // ICEBREAKER PROTOCOL</span><span>NO ACCOUNT REQUIRED</span></div>
     </main>

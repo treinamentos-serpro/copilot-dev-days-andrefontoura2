@@ -223,8 +223,32 @@ button { color: inherit; }
     position: absolute;
 }
 
-.lobby-screen { align-items: center; display: flex; justify-content: center; padding: 48px 24px; }
-.lobby-shell { animation: rise-in 700ms ease-out both; max-width: 570px; position: relative; width: 100%; z-index: 1; }
+.lobby-screen { align-items: center; display: flex; justify-content: center; padding: 36px 24px; }
+.lobby-shell {
+    max-width: 1120px;
+    padding: clamp(1.25rem, 3vw, 2rem);
+    position: relative;
+    width: 100%;
+    z-index: 1;
+}
+.lobby-shell::before {
+    background:
+        linear-gradient(135deg, rgba(49, 231, 226, 0.12), transparent 42%),
+        linear-gradient(315deg, rgba(255, 109, 120, 0.08), transparent 28%);
+    border: 1px solid rgba(58, 82, 104, 0.5);
+    box-shadow: inset 0 0 0 1px rgba(49, 231, 226, 0.08);
+    content: "";
+    inset: 0;
+    pointer-events: none;
+    position: absolute;
+}
+.lobby-poster {
+    align-items: end;
+    display: grid;
+    gap: clamp(1.25rem, 2vw, 2rem);
+    grid-template-columns: minmax(0, 1.4fr) minmax(280px, 0.78fr);
+    position: relative;
+}
 .lobby-topline, .lobby-footer, .board-footer, .board-label, .panel-code, .session-code, .intro-index, .intro-status {
     color: var(--muted);
     font-family: "Courier New", monospace;
@@ -233,14 +257,103 @@ button { color: inherit; }
     text-transform: uppercase;
 }
 .lobby-topline, .lobby-footer, .board-footer, .board-label { display: flex; justify-content: space-between; }
-.lobby-topline { border-bottom: 1px solid var(--line); padding-bottom: 14px; }
-.brand-lockup { padding: 68px 0 52px; }
-.brand-kicker { color: var(--cyan); font: 700 0.7rem "Courier New", monospace; letter-spacing: 0.28em; }
-.brand-lockup h1 { font: 700 clamp(4.8rem, 15vw, 8.8rem)/0.82 Impact, "Arial Black", sans-serif; letter-spacing: 0.015em; margin: 18px 0 24px; text-transform: uppercase; }
+.lobby-topline {
+    animation: rise-in 700ms ease-out both;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
+    padding-bottom: 14px;
+    position: relative;
+}
+.brand-lockup {
+    animation: rise-in 700ms 120ms ease-out both;
+    overflow: hidden;
+    padding: clamp(1rem, 4vw, 2rem) 0 clamp(1rem, 2vw, 1.5rem);
+    position: relative;
+}
+.brand-lockup::before {
+    background:
+        linear-gradient(90deg, rgba(49, 231, 226, 0.18), transparent),
+        linear-gradient(0deg, rgba(49, 231, 226, 0.18), transparent);
+    content: "";
+    height: 82%;
+    left: 0;
+    max-width: 520px;
+    opacity: 0.8;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+.brand-kicker { color: var(--cyan); display: inline-block; font: 700 0.72rem "Courier New", monospace; letter-spacing: 0.28em; margin-bottom: 0.85rem; position: relative; text-transform: uppercase; }
+.poster-caption,
+.poster-deck {
+    max-width: 34rem;
+    position: relative;
+}
+.poster-caption {
+    color: var(--muted);
+    font: 700 0.74rem "Courier New", monospace;
+    letter-spacing: 0.18em;
+    margin: 0 0 1rem;
+    text-transform: uppercase;
+}
+.brand-lockup h1 {
+    font: 700 clamp(4.6rem, 18vw, 11rem)/0.82 Impact, "Arial Black", sans-serif;
+    letter-spacing: 0.03em;
+    margin: 0;
+    max-width: 7ch;
+    overflow-wrap: anywhere;
+    position: relative;
+    text-shadow: 0 0 24px rgba(49, 231, 226, 0.08);
+    text-transform: uppercase;
+}
+.brand-lockup h1 span,
+.brand-lockup h1 em {
+    display: block;
+}
 .brand-lockup h1 em { color: var(--cyan); font-style: normal; text-shadow: 0 0 22px rgba(49, 231, 226, 0.45); }
-.brand-lockup p { color: var(--muted); font-size: 1.05rem; letter-spacing: 0.08em; margin: 0; }
+.brand-lockup p { color: var(--muted); font-size: 1.02rem; letter-spacing: 0.05em; margin: 0; }
+.poster-deck {
+    color: var(--text);
+    line-height: 1.6;
+    margin-top: 1.2rem;
+}
+.mission-strip {
+    align-items: stretch;
+    background: rgba(17, 24, 36, 0.84);
+    border: 1px solid rgba(49, 231, 226, 0.24);
+    box-shadow: inset 0 0 0 1px rgba(49, 231, 226, 0.08);
+    display: grid;
+    gap: 1px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-top: 1.6rem;
+    max-width: 44rem;
+    overflow: hidden;
+    position: relative;
+}
+.mission-strip::before {
+    background: linear-gradient(90deg, transparent, rgba(49, 231, 226, 0.24), transparent);
+    content: "";
+    height: 1px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.mission-strip span {
+    background: rgba(8, 11, 18, 0.82);
+    color: var(--text);
+    font: 700 0.72rem/1.45 "Courier New", monospace;
+    letter-spacing: 0.16em;
+    min-width: 0;
+    padding: 0.95rem 1rem;
+    text-transform: uppercase;
+}
 .briefing-panel, .board-frame, .victory-modal { background: rgba(17, 24, 36, 0.9); border: 1px solid var(--line-bright); box-shadow: var(--shadow-cyan); position: relative; }
-.briefing-panel { animation: rise-in 700ms 120ms ease-out both; padding: 22px; }
+.briefing-panel {
+    animation: rise-in 700ms 240ms ease-out both;
+    align-self: stretch;
+    padding: 22px;
+}
 .panel-heading { align-items: center; border-bottom: 1px solid var(--line); display: flex; gap: 10px; padding-bottom: 16px; }
 .panel-heading h2 { font: 700 0.76rem "Courier New", monospace; letter-spacing: 0.16em; margin: 0; text-transform: uppercase; }
 .panel-code { margin-left: auto; }
@@ -249,12 +362,59 @@ button { color: inherit; }
 .briefing-list li { align-items: center; border-bottom: 1px solid rgba(58, 82, 104, 0.45); display: flex; gap: 18px; padding: 15px 0; }
 .briefing-list li:last-child { border-bottom: 0; padding-bottom: 2px; }
 .briefing-list span { color: var(--cyan); font: 700 0.72rem "Courier New", monospace; }
-.briefing-list p { color: var(--text); font-size: 0.92rem; margin: 0; }
+.briefing-list p { color: var(--text); font-size: 0.92rem; line-height: 1.55; margin: 0; }
 .launch-button, .continue-button { align-items: center; display: flex; font-weight: 700; justify-content: space-between; letter-spacing: 0.08em; text-transform: uppercase; }
-.launch-button { animation: rise-in 700ms 240ms ease-out both; background: var(--lime); box-shadow: var(--shadow-lime); color: var(--ink); margin-top: 24px; padding: 18px 22px; width: 100%; }
-.launch-button strong, .continue-button span { font-size: 1.4rem; line-height: 0.8; }
-.launch-button:hover, .launch-button:focus-visible { background: #edff9a; transform: translateY(-2px); }
-.lobby-footer { border-top: 1px solid var(--line); margin-top: 42px; padding-top: 14px; }
+.launch-button {
+    animation: rise-in 700ms 360ms ease-out both;
+    background:
+        linear-gradient(135deg, #efff8d 0%, var(--lime) 58%, #acd328 100%);
+    box-shadow: var(--shadow-lime);
+    color: var(--ink);
+    margin-top: 24px;
+    overflow: hidden;
+    padding: 18px 22px;
+    position: relative;
+    width: 100%;
+}
+.launch-button::before {
+    background: linear-gradient(115deg, transparent 30%, rgba(255, 255, 255, 0.45) 50%, transparent 70%);
+    content: "";
+    inset: 0;
+    position: absolute;
+    transform: translateX(-120%);
+    transition: transform 240ms ease;
+}
+.launch-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    position: relative;
+    z-index: 1;
+}
+.launch-copy small {
+    font: 700 0.62rem "Courier New", monospace;
+    letter-spacing: 0.18em;
+}
+.launch-copy span {
+    font-size: 1.15rem;
+    letter-spacing: 0.14em;
+}
+.launch-button strong, .continue-button span {
+    font-size: 1.4rem;
+    line-height: 0.8;
+    position: relative;
+    z-index: 1;
+}
+.launch-button strong { animation: launch-arrow 1.2s ease-in-out infinite; }
+.launch-button:hover, .launch-button:focus-visible { background: linear-gradient(135deg, #f5ffad 0%, #e7ff74 58%, #bbdd36 100%); transform: translateY(-2px); }
+.launch-button:hover::before, .launch-button:focus-visible::before { transform: translateX(120%); }
+.lobby-footer {
+    animation: rise-in 700ms 460ms ease-out both;
+    border-top: 1px solid var(--line);
+    margin-top: 26px;
+    padding-top: 14px;
+    position: relative;
+}
 
 .active-screen { background: var(--ink); display: flex; flex-direction: column; }
 .console-header { align-items: center; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; padding: 18px clamp(18px, 5vw, 64px); position: relative; z-index: 1; }
@@ -308,10 +468,25 @@ button { color: inherit; }
 :focus-visible { box-shadow: 0 0 0 2px var(--ink), 0 0 0 4px var(--cyan); outline: 0; }
 @keyframes rise-in { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes modal-in { from { opacity: 0; transform: scale(0.94) translateY(12px); } to { opacity: 1; transform: scale(1) translateY(0); } }
+@keyframes launch-arrow {
+    0%, 100% { transform: translate3d(0, 0, 0); }
+    50% { transform: translate3d(5px, -2px, 0); }
+}
 
 @media (max-width: 680px) {
-    .lobby-screen { padding: 28px 18px; }
-    .brand-lockup { padding: 52px 0 38px; }
+    .lobby-screen { padding: 24px 14px; }
+    .lobby-shell { padding: 1rem; }
+    .lobby-poster { grid-template-columns: minmax(0, 1fr); }
+    .brand-lockup { padding: 1rem 0 0.5rem; }
+    .brand-lockup::before { height: 68%; max-width: 360px; }
+    .brand-lockup h1 { font-size: clamp(3.8rem, 25vw, 6rem); max-width: 100%; }
+    .poster-caption { font-size: 0.66rem; letter-spacing: 0.15em; }
+    .poster-deck { font-size: 0.95rem; }
+    .mission-strip { grid-template-columns: minmax(0, 1fr); }
+    .mission-strip span { padding: 0.82rem 0.95rem; }
+    .briefing-list li { align-items: flex-start; }
+    .briefing-list p { font-size: 0.88rem; }
+    .launch-copy span { font-size: 1rem; }
     .game-intro { align-items: flex-start; flex-direction: column; gap: 5px; padding: 15px 18px; }
     .intro-status { display: none; }
     .board-stage { padding: 14px 12px 24px; }
