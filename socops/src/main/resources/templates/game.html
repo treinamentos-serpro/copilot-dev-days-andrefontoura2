@@ -15,15 +15,40 @@
 <!-- ============================================================= -->
 <div id="lobbyView" class="screen lobby-screen">
     <main class="lobby-shell">
-        <div class="lobby-topline"><span>SYS.01</span><span>LOCAL NETWORK // READY</span></div>
-        <div class="brand-lockup">
-            <span class="brand-kicker">SOCIAL OPERATIONS</span>
-            <h1>Soc <em>Ops</em></h1>
-            <p>Human connection, gamified.</p>
+        <div class="lobby-topline">
+            <span>SYS.01</span>
+            <span>LOCAL NETWORK // READY</span>
+        </div>
+
+        <div class="lobby-command">
+            <aside class="status-rail" aria-label="System status">
+                <div class="status-chip">
+                    <span class="signal-dot"></span>
+                    <span>Command center</span>
+                </div>
+                <ul class="status-list">
+                    <li><span>Mode</span><strong>Live briefing</strong></li>
+                    <li><span>Comms</span><strong>Open channel</strong></li>
+                    <li><span>Entry</span><strong>No account required</strong></li>
+                </ul>
+            </aside>
+
+            <div class="brand-lockup">
+                <span class="brand-kicker">SOCIAL OPERATIONS</span>
+                <h1>Soc <em>Ops</em></h1>
+                <p class="brand-summary">Cyberpunk social bingo for rooms that need a faster first hello.</p>
+            </div>
         </div>
 
         <section class="briefing-panel" aria-labelledby="briefingTitle">
-            <div class="panel-heading"><span class="signal-dot"></span><h2 id="briefingTitle">Mission briefing</h2><span class="panel-code">[00:25]</span></div>
+            <div class="panel-heading">
+                <span class="signal-dot"></span>
+                <h2 id="briefingTitle">Mission briefing</h2>
+                <span class="panel-code">[00:25]</span>
+            </div>
+            <p class="briefing-lead">
+                Scan the room, match the prompts, and lock a line before the conversation window moves on.
+            </p>
             <ol class="briefing-list">
                 <li><span>01</span><p>Find a person who matches a prompt.</p></li>
                 <li><span>02</span><p>Mark the square. Keep the conversation moving.</p></li>
@@ -32,9 +57,16 @@
         </section>
 
         <button onclick="launchGame()" class="launch-button accent-active">
-            <span>Initialize game</span><strong>↗</strong>
+            <span class="launch-copy">
+                <small>Mission ready</small>
+                <span>Launch session</span>
+            </span>
+            <strong>↗</strong>
         </button>
-        <div class="lobby-footer"><span>v2.5 // ICEBREAKER PROTOCOL</span><span>NO ACCOUNT REQUIRED</span></div>
+        <div class="lobby-footer">
+            <span>v2.5 // ICEBREAKER PROTOCOL</span>
+            <span>5 × 5 BOARD // LIVE ROOM PLAY</span>
+        </div>
     </main>
 </div>
 
