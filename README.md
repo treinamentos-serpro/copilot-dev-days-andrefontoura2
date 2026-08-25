@@ -41,6 +41,8 @@ cd socops
 ./mvnw clean package
 ```
 
+The build validates Java formatting and unused imports with Checkstyle before compiling.
+
 ## Test
 
 ```bash
