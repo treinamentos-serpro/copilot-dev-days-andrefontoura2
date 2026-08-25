@@ -310,7 +310,7 @@ button { color: inherit; }
     align-items: end;
     display: grid;
     gap: 16px;
-    grid-template-columns: minmax(0, 1fr) minmax(200px, 0.62fr);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.62fr);
     margin-top: 28px;
 }
 .briefing-panel, .board-frame, .victory-modal { background: rgba(17, 24, 36, 0.9); border: 1px solid var(--line-bright); box-shadow: var(--shadow-cyan); position: relative; }
