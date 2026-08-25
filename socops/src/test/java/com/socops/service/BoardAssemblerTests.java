@@ -112,6 +112,17 @@ class BoardAssemblerTests {
     }
 
     @Test
+    @DisplayName("Tech Life Bingo uses Brazilian Portuguese tech prompts")
+    void techLifeBingoUsesPortugueseTechPrompts() {
+        assertEquals(24, com.socops.data.IcebreakerPrompts.ALL_PROMPTS.size(),
+                "The board should offer 24 themed prompts");
+        assertTrue(com.socops.data.IcebreakerPrompts.ALL_PROMPTS.contains("usa teclado mecânico"),
+                "A technology-themed prompt should use Brazilian Portuguese");
+        assertTrue(com.socops.data.IcebreakerPrompts.ALL_PROMPTS.contains("usa IA no dia a dia"),
+                "AI-related prompts should be included in Portuguese");
+    }
+
+    @Test
     @DisplayName("collectWinningCellIds returns the correct position set")
     void winningCellIdsMatchStreak() {
         List<Integer> expectedPositions = List.of(0, 1, 2, 3, 4);

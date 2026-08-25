@@ -9,33 +9,33 @@ import java.util.List;
  */
 public final class IcebreakerPrompts {
 
-    public static final String FREE_CELL_LABEL = "FREE SPACE";
+    public static final String FREE_CELL_LABEL = "ESPAÇO LIVRE";
 
     public static final List<String> ALL_PROMPTS = List.of(
-            "bikes to work",
-            "has lived in another country",
-            "has a pet",
-            "prefers tea over coffee",
-            "plays an instrument",
-            "speaks more than 2 languages",
-            "has run a marathon",
-            "was born in a different state",
-            "has met a celebrity",
-            "can juggle",
-            "has been skydiving",
-            "loves cooking",
-            "has a garden",
-            "has traveled to Asia",
-            "is left-handed",
-            "has a twin",
-            "plays video games",
-            "does yoga",
-            "has a hidden talent",
-            "loves spicy food",
-            "has been on TV",
-            "collects something unique",
-            "has read a book this month",
-            "knows sign language"
+            "usa teclado mecânico",
+            "trabalha remotamente",
+            "já participou de hackathon",
+            "usa IA no dia a dia",
+            "tem canal de tecnologia favorito",
+            "já migrou de sistema operacional",
+            "acumula gadgets sem usar",
+            "tem setup de trabalho",
+            "já passou a noite em debug",
+            "gosta de automação",
+            "já configurou algum app do zero",
+            "usa duas telas ou mais",
+            "já teve problema com Wi‑Fi",
+            "curte programação em Python",
+            "já fez curso online de tecnologia",
+            "é fã de hardware retrô",
+            "tem conta em rede social de dev",
+            "já instalou Linux no PC",
+            "trabalha com dados ou BI",
+            "já usou chatbot para estudar",
+            "tem projeto pessoal em andamento",
+            "usa atalhos de teclado favoritos",
+            "já mudou de empresa por tecnologia",
+            "tem playlist para focar em código"
     );
 
     private IcebreakerPrompts() {

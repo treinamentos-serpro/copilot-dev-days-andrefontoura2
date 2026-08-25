@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="theme-color" content="#080b12"/>
-    <title>Soc Ops // Social Bingo</title>
+    <title>Tech Life Bingo</title>
     <link rel="stylesheet" th:href="@{/css/app.css}"/>
     <link rel="icon" type="image/png" th:href="@{/favicon.png}"/>
 </head>
@@ -17,24 +17,24 @@
     <main class="lobby-shell">
         <div class="lobby-topline"><span>SYS.01</span><span>LOCAL NETWORK // READY</span></div>
         <div class="brand-lockup">
-            <span class="brand-kicker">SOCIAL OPERATIONS</span>
-            <h1>Soc <em>Ops</em></h1>
-            <p>Human connection, gamified.</p>
+            <span class="brand-kicker">TECH LIFE</span>
+            <h1>Tech <em>Life</em></h1>
+            <p>Conexões digitais, sem formalidade.</p>
         </div>
 
         <section class="briefing-panel" aria-labelledby="briefingTitle">
-            <div class="panel-heading"><span class="signal-dot"></span><h2 id="briefingTitle">Mission briefing</h2><span class="panel-code">[00:25]</span></div>
+            <div class="panel-heading"><span class="signal-dot"></span><h2 id="briefingTitle">Briefing da missão</h2><span class="panel-code">[00:25]</span></div>
             <ol class="briefing-list">
-                <li><span>01</span><p>Find a person who matches a prompt.</p></li>
-                <li><span>02</span><p>Mark the square. Keep the conversation moving.</p></li>
-                <li><span>03</span><p>Complete five in a row to trigger BINGO.</p></li>
+                <li><span>01</span><p>Encontre alguém que combine com a pergunta.</p></li>
+                <li><span>02</span><p>Marque o quadrado e mantenha a conversa fluindo.</p></li>
+                <li><span>03</span><p>Complete cinco em linha para ativar o BINGO.</p></li>
             </ol>
         </section>
 
         <button onclick="launchGame()" class="launch-button accent-active">
-            <span>Initialize game</span><strong>↗</strong>
+            <span>Iniciar partida</span><strong>↗</strong>
         </button>
-        <div class="lobby-footer"><span>v2.5 // ICEBREAKER PROTOCOL</span><span>NO ACCOUNT REQUIRED</span></div>
+        <div class="lobby-footer"><span>v2.5 // PROTOCOLO TECH</span><span>SEM LOGIN</span></div>
     </main>
 </div>
 
@@ -45,27 +45,27 @@
 
     <!-- top bar -->
     <header class="console-header">
-        <button onclick="retreatToLobby()" class="back-button tile-active"><span>←</span> Exit session</button>
-        <div class="mini-brand"><span class="signal-dot"></span><strong>SOC OPS</strong><span>// LIVE</span></div>
-        <div class="session-code">RUN <b>001</b></div>
+        <button onclick="retreatToLobby()" class="back-button tile-active"><span>←</span> Sair da sessão</button>
+        <div class="mini-brand"><span class="signal-dot"></span><strong>TECH LIFE</strong><span>// AO VIVO</span></div>
+        <div class="session-code">RODADA <b>001</b></div>
     </header>
 
-    <div class="game-intro"><span class="intro-index">OBJECTIVE</span><p>Tap a square when you find someone who matches it.</p><span class="intro-status">SCANNING FOR CONNECTIONS</span></div>
+    <div class="game-intro"><span class="intro-index">OBJETIVO</span><p>Toque no quadrado quando encontrar alguém que combine com a pergunta.</p><span class="intro-status">SCAN DE CONEXÕES</span></div>
 
     <!-- bingo banner (hidden until victory) -->
     <div id="bingoBanner" class="bingo-banner" style="display:none">
-        <span class="banner-spark">✦</span><strong>BINGO // LINE LOCKED</strong><span>Keep the network active.</span>
+        <span class="banner-spark">✦</span><strong>BINGO // LINHA ATIVA</strong><span>Mantenha a rede em movimento.</span>
     </div>
 
     <!-- the 5×5 grid -->
     <main class="board-stage">
-        <div class="board-label"><span>CONNECTION GRID</span><span>5 × 5 / FREE PLAY</span></div>
+        <div class="board-label"><span>GRID DE CONEXÕES</span><span>5 × 5 / MODO LIVRE</span></div>
         <div class="board-frame">
             <div id="gridContainer" class="grid grid-cols-5 gap-1 w-full mx-auto aspect-square">
             <!-- tiles injected by JS -->
             </div>
         </div>
-        <div class="board-footer"><span><i class="legend-mark"></i> CONTACT CONFIRMED</span><span><i class="legend-free"></i> FREE SPACE</span><span class="board-hint">TAP TO MARK</span></div>
+        <div class="board-footer"><span><i class="legend-mark"></i> CONTATO CONFIRMADO</span><span><i class="legend-free"></i> ESPAÇO LIVRE</span><span class="board-hint">TOQUE PARA MARCAR</span></div>
     </main>
 </div>
 
@@ -74,11 +74,11 @@
 <!-- ============================================================= -->
 <div id="victoryOverlay" class="victory-overlay" style="display:none" role="dialog" aria-modal="true" aria-labelledby="victoryTitle">
     <div class="victory-modal">
-        <div class="victory-eyebrow"><span class="signal-dot"></span> SYSTEM EVENT // 001</div>
+        <div class="victory-eyebrow"><span class="signal-dot"></span> EVENTO DO SISTEMA // 001</div>
         <div class="victory-icon">✦</div>
         <h2 id="victoryTitle">BINGO<span>!</span></h2>
-        <p>Five points connected.<br/>The room is officially online.</p>
-        <button onclick="dismissVictoryModal()" class="continue-button accent-active">Continue playing <span>↗</span></button>
+        <p> Cinco pontos conectados.<br/>A sala já está online.</p>
+        <button onclick="dismissVictoryModal()" class="continue-button accent-active">Continuar jogando <span>↗</span></button>
     </div>
 </div>
 
