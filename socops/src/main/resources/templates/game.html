@@ -16,24 +16,41 @@
 <div id="lobbyView" class="screen lobby-screen">
     <main class="lobby-shell">
         <div class="lobby-topline"><span>SYS.01</span><span>LOCAL NETWORK // READY</span></div>
-        <div class="brand-lockup">
-            <span class="brand-kicker">SOCIAL OPERATIONS</span>
-            <h1>Soc <em>Ops</em></h1>
-            <p>Human connection, gamified.</p>
+        <div class="lobby-grid">
+            <section class="lobby-hero" aria-labelledby="lobbyTitle">
+                <div class="hero-signalbar">
+                    <span class="hero-signal"><span class="signal-dot"></span>SPLIT SIGNAL // LIVE ICEBREAKER</span>
+                    <span class="hero-tag">Desktop launch node</span>
+                </div>
+                <div class="brand-lockup">
+                    <span class="brand-kicker">SOCIAL OPERATIONS</span>
+                    <h1 id="lobbyTitle">Soc <em>Ops</em></h1>
+                    <p>Human connection, gamified.</p>
+                </div>
+                <p class="lobby-message">Turn first hellos into easy follow-ups. Soc Ops gives the whole room a shared prompt system so conversations start faster, feel lighter, and lead to real connections.</p>
+                <div class="launch-band">
+                    <button onclick="launchGame()" class="launch-button accent-active">
+                        <span class="launch-copy"><small>Launch room protocol</small><span>Initialize game</span></span><strong>↗</strong>
+                    </button>
+                    <p class="launch-caption"><span class="signal-marker" aria-hidden="true"></span>Built for mixers, team socials, workshops, and any room that needs a quick social spark.</p>
+                </div>
+            </section>
+
+            <section class="briefing-panel" aria-labelledby="briefingTitle">
+                <div class="panel-heading"><span class="signal-dot"></span><h2 id="briefingTitle">Mission briefing</h2><span class="panel-code">[00:25]</span></div>
+                <p class="briefing-intro">A compact playbook for getting people talking without forcing the moment.</p>
+                <ol class="briefing-list">
+                    <li><span>01</span><div><strong>Scan the room</strong><p>Find a person who matches a prompt and let the square open the conversation.</p></div></li>
+                    <li><span>02</span><div><strong>Mark the signal</strong><p>Tap the square, keep moving, and use each match to meet someone new.</p></div></li>
+                    <li><span>03</span><div><strong>Lock the line</strong><p>Connect five in a row to trigger BINGO and keep the social energy online.</p></div></li>
+                </ol>
+                <div class="briefing-status" aria-label="Lobby status">
+                    <div class="status-card"><span class="status-label">Social goal</span><strong>Low-pressure intros</strong></div>
+                    <div class="status-card"><span class="status-label">Room rhythm</span><strong>Roam, talk, mark</strong></div>
+                    <div class="status-card"><span class="status-label">Win signal</span><strong>Five connected prompts</strong></div>
+                </div>
+            </section>
         </div>
-
-        <section class="briefing-panel" aria-labelledby="briefingTitle">
-            <div class="panel-heading"><span class="signal-dot"></span><h2 id="briefingTitle">Mission briefing</h2><span class="panel-code">[00:25]</span></div>
-            <ol class="briefing-list">
-                <li><span>01</span><p>Find a person who matches a prompt.</p></li>
-                <li><span>02</span><p>Mark the square. Keep the conversation moving.</p></li>
-                <li><span>03</span><p>Complete five in a row to trigger BINGO.</p></li>
-            </ol>
-        </section>
-
-        <button onclick="launchGame()" class="launch-button accent-active">
-            <span>Initialize game</span><strong>↗</strong>
-        </button>
         <div class="lobby-footer"><span>v2.5 // ICEBREAKER PROTOCOL</span><span>NO ACCOUNT REQUIRED</span></div>
     </main>
 </div>
