@@ -405,7 +405,6 @@ button { color: inherit; }
     position: relative;
     z-index: 1;
 }
-.launch-button strong { animation: launch-arrow 1.2s ease-in-out infinite; }
 .launch-button:hover, .launch-button:focus-visible { background: linear-gradient(135deg, #f5ffad 0%, #e7ff74 58%, #bbdd36 100%); transform: translateY(-2px); }
 .launch-button:hover::before, .launch-button:focus-visible::before { transform: translateX(120%); }
 .lobby-footer {
@@ -473,6 +472,10 @@ button { color: inherit; }
     50% { transform: translate3d(5px, -2px, 0); }
 }
 
+@media (prefers-reduced-motion: no-preference) {
+    .launch-button strong { animation: launch-arrow 1.2s ease-in-out infinite; }
+}
+
 @media (max-width: 680px) {
     .lobby-screen { padding: 24px 14px; }
     .lobby-shell { padding: 1rem; }
@@ -503,5 +506,6 @@ button { color: inherit; }
 }
 
 @media (prefers-reduced-motion: reduce) {
+    .launch-button::before { transition: none; }
     *, *::before, *::after { animation-duration: 0.01ms !important; scroll-behavior: auto !important; transition-duration: 0.01ms !important; }
 }
